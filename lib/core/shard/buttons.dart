@@ -22,3 +22,32 @@ class GeneralButton extends StatelessWidget {
     );
   }
 }
+
+class AppIconButton extends StatelessWidget {
+  final String icon;
+  final Function() onTap;
+
+  const AppIconButton({super.key, required this.icon, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        alignment: Alignment.center,
+        height: 52,
+        width: 52,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: AppColor.primaryColor,
+        ),
+        child: Image.asset(
+          icon,
+          color: Colors.white,
+          height: 20,
+          width: 20,
+        ),
+      ),
+    );
+  }
+}
