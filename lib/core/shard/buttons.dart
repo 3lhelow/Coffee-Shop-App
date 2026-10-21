@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../models/category_model.dart';
 import '../theme/app_theme.dart';
 
 class GeneralButton extends StatelessWidget {
@@ -46,6 +47,44 @@ class AppIconButton extends StatelessWidget {
           color: Colors.white,
           height: 20,
           width: 20,
+        ),
+      ),
+    );
+  }
+}
+
+class CategoryButton extends StatelessWidget {
+  final bool isSelected;
+  final Function() onTap;
+  final CategoryModel category;
+
+  const CategoryButton({
+    super.key,
+    required this.isSelected,
+    required this.onTap,
+    required this.category,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(6),
+      child: Container(
+        alignment: Alignment.center,
+        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+        height: 29,
+
+        decoration: BoxDecoration(
+          color: isSelected ? AppColor.primaryColor : Color(0xffEDEDED).withAlpha(300),
+          borderRadius: BorderRadius.circular(6),
+        ),
+
+        child: Text(
+          category.name,
+          style: isSelected
+              ? AppTextStyle.normalTitleText(color: Colors.white)
+              : AppTextStyle.normalTitleText(size: 14),
         ),
       ),
     );
