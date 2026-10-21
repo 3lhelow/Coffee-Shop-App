@@ -3,7 +3,11 @@ const String _images = "$_assets/images";
 const String _icons = "$_assets/icons";
 
 class AppImages {
-  static const String welcome = "$_images/welome_secren.png";
+
+  // privet constructor
+  AppImages._();
+
+  static const String welcome = "$_images/welcome_screen.png";
   static const String product01 = "$_images/1.png";
   static const String product02 = "$_images/2.png";
   static const String product03 = "$_images/3.png";
@@ -13,6 +17,10 @@ class AppImages {
 }
 
 class AppIcons {
+
+  // privet constructor
+  AppIcons._();
+
   static const String search = "$_icons/Search.png";
   static const String arrowDown = "$_icons/Arrow - Down 2.png";
   static const String arrowLeft = "$_icons/Arrow - Left 2.png";
@@ -28,6 +36,6 @@ class AppIcons {
   static const String bike = "$_icons/Mask Group.png";
   static const String been = "$_icons/Mask Group2.png";
   static const String milk = "$_icons/milk.png";
-  static const String minuscircle = "$_icons/minuscircle.png";
+  static const String minuscule = "$_icons/minuscule.png";
   static const String plus = "$_icons/plus.png";
 }
