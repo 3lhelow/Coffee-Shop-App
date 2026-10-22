@@ -1,6 +1,9 @@
+import 'package:coffee_shop_app/features/home/data/home_data_source.dart';
+import 'package:coffee_shop_app/features/home/widgets/products_item.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/models/category_model.dart';
+import '../../../core/models/products_model.dart';
 import '../../../core/shard/buttons.dart';
 import '../widgets/home_background.dart';
 import '../widgets/home_banner.dart';
@@ -15,12 +18,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final List<CategoryModel> _categories = [
-    CategoryModel(id: 1, name: "All Coffee"),
-    CategoryModel(id: 2, name: "Macchiato"),
-    CategoryModel(id: 3, name: "Latte"),
-    CategoryModel(id: 4, name: "Americano"),
-  ];
+  final HomeDataSource _dataSource = HomeDataSource();
 
   int _selectedCategoryIndex = 0;
 
@@ -60,10 +58,10 @@ class _HomeViewState extends State<HomeView> {
                       },
 
                       scrollDirection: Axis.horizontal,
-                      itemCount: _categories.length,
+                      itemCount: _dataSource.categories.length,
 
                       itemBuilder: (BuildContext context, int index) {
-                        final CategoryModel category = _categories[index];
+                        final CategoryModel category = _dataSource.categories[index];
 
                         return CategoryButton(
                           isSelected: index == _selectedCategoryIndex,
@@ -75,6 +73,27 @@ class _HomeViewState extends State<HomeView> {
                           category: category,
                         );
                       },
+                    ),
+                  ),
+
+                  // Products
+                  Expanded(
+                    child: GridView.builder(
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      itemCount: _dataSource.products.length,
+
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 15,
+                        childAspectRatio: 1 / 1.7,
+                      ),
+
+                      itemBuilder: (BuildContext context, int index) {
+                        final ProductsModel product = _dataSource.products[index];
+                        return ProductsItem(product: product);
+                      },
+
                     ),
                   ),
                 ],
