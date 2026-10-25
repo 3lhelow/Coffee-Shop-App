@@ -11,7 +11,7 @@ class SearchWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(child: SearchTextField()),
+        const Expanded(child: SearchTextField()),
 
         const SizedBox(width: 16),
 

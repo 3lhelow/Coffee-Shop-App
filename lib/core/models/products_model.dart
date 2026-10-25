@@ -6,6 +6,7 @@ class ProductsModel {
   final String type;
   final double price;
   final double rate;
+  final int totalOrders;
 
   ProductsModel({
     required this.id,
@@ -15,6 +16,7 @@ class ProductsModel {
     required this.type,
     required this.price,
     required this.rate,
+    required this.totalOrders,
   });
   
 }

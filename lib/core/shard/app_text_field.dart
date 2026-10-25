@@ -18,7 +18,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
 
         decoration: InputDecoration(
           prefixIcon: Container(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: Image.asset(
               AppIcons.search,
               height: 24,
@@ -31,16 +31,16 @@ class _SearchTextFieldState extends State<SearchTextField> {
           helperStyle: AppTextStyle.subTitleText(size: 16),
 
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.transparent),
+            borderSide: const BorderSide(color: Colors.transparent),
             borderRadius: BorderRadius.circular(12),
           ),
 
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.transparent),
+            borderSide: const BorderSide(color: Colors.transparent),
             borderRadius: BorderRadius.circular(12),
           ),
 
-          fillColor: Color(0xff2A2A2A),
+          fillColor: const Color(0xff2A2A2A),
           filled: true,
         ),
       ),

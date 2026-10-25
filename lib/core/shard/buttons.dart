@@ -72,11 +72,11 @@ class CategoryButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(6),
       child: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
         height: 29,
 
         decoration: BoxDecoration(
-          color: isSelected ? AppColor.primaryColor : Color(0xffEDEDED).withAlpha(300),
+          color: isSelected ? AppColor.primaryColor : const Color(0xffEDEDED).withAlpha(300),
           borderRadius: BorderRadius.circular(6),
         ),
 

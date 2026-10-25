@@ -9,7 +9,7 @@ class AppColor {
   static const Color titleBlackText = Color(0xff242424);
   static const Color subTitleText = Color(0xffA2A2A2);
   static const Color iconBlack = Color(0xff2A2A2A);
-  static const Color dividerColor = Color(0xffF9F2ED);
+  static const Color dividerColor = Color(0xffE3E3E3);
 }
 
 class AppTextStyle {
@@ -38,5 +38,9 @@ class AppTextStyle {
       fontSize: size ?? 12,
       color: color ?? AppColor.subTitleText,
     );
+  }
+
+  static TextStyle titleText() {
+    return const TextStyle(fontSize: 24, fontWeight: FontWeight.bold);
   }
 }

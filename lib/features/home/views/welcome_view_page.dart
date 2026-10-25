@@ -46,7 +46,7 @@ class WelcomeViewPage extends StatelessWidget {
               // black container
               Expanded(
                 child: Container(
-                  decoration: BoxDecoration(color: Colors.black),
+                  decoration: const BoxDecoration(color: Colors.black),
                 ),
               ),
             ],
@@ -59,8 +59,8 @@ class WelcomeViewPage extends StatelessWidget {
               Expanded(
                 flex: 4,
                 child: Container(
-                  padding: EdgeInsets.all(24),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(24),
+                  decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
@@ -96,7 +96,7 @@ class WelcomeViewPage extends StatelessWidget {
                                 Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => HomeView(),
+                                    builder: (context) => const HomeView(),
                                   ),
                                   (context) => false,
                                 );

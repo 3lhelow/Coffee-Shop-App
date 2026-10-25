@@ -1,6 +1,5 @@
 import 'package:coffee_shop_app/core/constants/image_constant.dart';
 import 'package:coffee_shop_app/core/models/products_model.dart';
-
 import '../../../core/models/category_model.dart';
 
 class HomeDataSource {
@@ -16,51 +15,51 @@ class HomeDataSource {
       id: 1,
       name: "Caffe Mocha",
       image: AppImages.product01,
-      description:
-      "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo",
+      description: "A chocolate-flavored variant of a caffè latte, traditionally mixed with a sweet chocolate syrup.",
       type: "Deep Foam",
       price: 6.53,
       rate: 4.5,
+      totalOrders: 230,
     ),
     ProductsModel(
       id: 2,
-      name: "Caffe Mocha",
+      name: "Macchiato",
       image: AppImages.product02,
-      description:
-      "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo",
-      type: "Deep Foam",
-      price: 2.53,
-      rate: 4.5,
+      description: "An espresso coffee drink with a small amount of milk, traditionally foamed.",
+      type: "Espresso",
+      price: 4.50,
+      rate: 4.7,
+      totalOrders: 20,
     ),
     ProductsModel(
       id: 3,
-      name: "Caffe Mocha",
+      name: "Latte",
       image: AppImages.product03,
-      description:
-      "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo",
-      type: "Deep Foam",
-      price: 8.53,
-      rate: 4.5,
+      description: "A coffee drink of Italian origin made with espresso and steamed milk.",
+      type: "Steamed Milk",
+      price: 5.20,
+      rate: 4.6,
+      totalOrders: 130,
     ),
     ProductsModel(
       id: 4,
-      name: "Caffe Mocha",
+      name: "Americano",
       image: AppImages.product04,
-      description:
-      "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo",
-      type: "Deep Foam",
-      price: 5.53,
-      rate: 4.5,
+      description: "A type of coffee drink prepared by diluting an espresso with hot water.",
+      type: "Hot Water",
+      price: 3.80,
+      rate: 4.3,
+      totalOrders: 26,
     ),
     ProductsModel(
       id: 5,
-      name: "Caffe Mocha",
+      name: "Cappuccino",
       image: AppImages.product05,
-      description:
-      "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo",
-      type: "Deep Foam",
-      price: 4.53,
-      rate: 4.5,
+      description: "A classic Italian coffee masterpiece featuring equal parts espresso, steamed milk, and velvety microfoam. Expertly balanced to deliver a bold coffee flavor with a smooth, creamy finish that coffee lovers crave.",
+      type: "Rich Foam",
+      price: 4.90,
+      rate: 4.8,
+      totalOrders: 30,
     ),
   ];
 }

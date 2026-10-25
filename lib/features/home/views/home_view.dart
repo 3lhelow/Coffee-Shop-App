@@ -27,34 +27,34 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       body: Stack(
         children: [
-          HomeBackground(),
+          const HomeBackground(),
 
           SafeArea(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // location
-                  SizedBox(height: 50),
-                  LocationWidget(),
+                  const SizedBox(height: 50),
+                  const LocationWidget(),
 
                   // search
-                  SizedBox(height: 24),
-                  SearchWidget(),
+                  const SizedBox(height: 24),
+                  const SearchWidget(),
 
                   // banner
-                  SizedBox(height: 24),
-                  HomeBanner(),
+                  const SizedBox(height: 24),
+                  const HomeBanner(),
 
                   // category
-                  SizedBox(height: 24),
+                  const SizedBox(height: 24),
 
                   SizedBox(
                     height: 35,
                     child: ListView.separated(
                       separatorBuilder: (BuildContext context, int index) {
-                        return SizedBox(width: 16);
+                        return const SizedBox(width: 16);
                       },
 
                       scrollDirection: Axis.horizontal,
