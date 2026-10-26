@@ -101,7 +101,7 @@ class DetailsItem extends StatelessWidget {
 
                 // description
                 const SizedBox(height: 8),
-                Text("Description", style: AppTextStyle.titleText()),
+                Text("Description", style: AppTextStyle.normalTitleText(size: 18)),
                 const SizedBox(height: 8),
                 // Text(product.description, style: AppTextStyle.subTitleText(), maxLines: 3, overflow: TextOverflow.ellipsis, )
                 ExpandableText(
@@ -112,7 +112,7 @@ class DetailsItem extends StatelessWidget {
                 const SizedBox(height: 18),
 
                 // size
-                Text("Size", style: AppTextStyle.titleText()),
+                Text("Size", style: AppTextStyle.normalTitleText(size: 18)),
                 const SizedBox(height: 12),
                 const ProductSizes(),
               ],

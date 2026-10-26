@@ -38,4 +38,5 @@ class AppIcons {
   static const String milk = "$_icons/milk.png";
   static const String minuscule = "$_icons/minuscule.png";
   static const String plus = "$_icons/plus.png";
+  static const String notification = "$_icons/Notification.png";
 }

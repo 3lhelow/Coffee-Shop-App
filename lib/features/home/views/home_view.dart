@@ -1,4 +1,5 @@
 import 'package:coffee_shop_app/features/home/data/home_data_source.dart';
+import 'package:coffee_shop_app/features/home/widgets/home_bottom_navigation.dart';
 import 'package:coffee_shop_app/features/home/widgets/products_item.dart';
 import 'package:flutter/material.dart';
 
@@ -82,18 +83,18 @@ class _HomeViewState extends State<HomeView> {
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       itemCount: _dataSource.products.length,
 
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 10,
-                        crossAxisSpacing: 15,
-                        childAspectRatio: 1 / 1.7,
-                      ),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 10,
+                            crossAxisSpacing: 15,
+                            childAspectRatio: 1 / 1.6,
+                          ),
 
                       itemBuilder: (BuildContext context, int index) {
                         final ProductsModel product = _dataSource.products[index];
                         return ProductsItem(product: product);
                       },
-
                     ),
                   ),
                 ],
@@ -101,6 +102,19 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
         ],
+      ),
+
+      // bottom navigation
+      bottomNavigationBar: Container(
+        height: 70,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+        ),
+        child: const HomeBottomNavigation(),
       ),
     );
   }

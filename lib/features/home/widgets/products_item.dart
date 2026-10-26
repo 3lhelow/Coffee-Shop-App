@@ -26,13 +26,62 @@ class ProductsItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            // product.image
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: AspectRatio(
-                aspectRatio: 1,
-                child: Image.asset(product.image, fit: BoxFit.cover),
-              ),
+            // product.image + product.rate
+            Stack(
+              alignment: AlignmentGeometry.topRight,
+              children: [
+
+                // image
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: Image.asset(product.image, fit: BoxFit.cover),
+                  ),
+                ),
+                
+                // rate
+                Positioned(
+                  top: 0,
+                  right: 0,
+
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF313131).withValues(alpha: 0.5),
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(12),
+                        topRight: Radius.circular(12),
+                      ),
+                    ),
+
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+
+                        const Icon(
+                          Icons.star,
+                          color: Color(0xFFFFC107),
+                          size: 16,
+                        ),
+
+                        const SizedBox(width: 4),
+
+                        Text(
+                          '${product.rate}',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
 
             const SizedBox(height: 8),
