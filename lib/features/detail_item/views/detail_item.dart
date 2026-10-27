@@ -18,7 +18,7 @@ class DetailsItem extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(18),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
 
           child: SingleChildScrollView(
             child: Column(
@@ -127,7 +127,7 @@ class DetailsItem extends StatelessWidget {
           height: 100,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           color: Colors.white,
-          child: BuyNowSection(price: product.price),
+          child: BuyNowSection(product: product,),
         ),
       ),
     );

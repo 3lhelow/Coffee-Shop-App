@@ -13,7 +13,7 @@ class LocationWidget extends StatelessWidget {
         const SizedBox(height: 8),
         Text(
           "Bilzen, Tanjungbalai",
-          style: AppTextStyle.smallTitleText(color: Colors.white),
+          style: AppTextStyle.normalTitleText(color: Colors.white),
         ),
       ],
     );

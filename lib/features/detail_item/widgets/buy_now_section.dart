@@ -1,12 +1,14 @@
+import 'package:coffee_shop_app/core/models/products_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/shard/buttons.dart';
 import '../../../core/theme/app_theme.dart';
+import '../../order/views/order_view.dart';
 
 class BuyNowSection extends StatelessWidget {
-  final double price;
+  final ProductsModel product;
 
-  const BuyNowSection({super.key, required this.price});
+  const BuyNowSection({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class BuyNowSection extends StatelessWidget {
             Text("Price", style: AppTextStyle.subTitleText(size: 14)),
             const SizedBox(height: 4),
             Text(
-              "\$ $price",
+              "\$ ${product.price}",
               style: AppTextStyle.normalTitleText(
                 color: AppColor.primaryColor,
                 size: 18,
@@ -28,11 +30,17 @@ class BuyNowSection extends StatelessWidget {
           ],
         ),
 
-
         SizedBox(
           width: 220,
-          // todo: modify onPressed to navigate to Order page
-          child: GeneralButton(name: "Buy Now", onPressed: () {}),
+          child: GeneralButton(
+            name: "Buy Now",
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => OrderView(product: product,)),
+              );
+            },
+          ),
         ),
       ],
     );

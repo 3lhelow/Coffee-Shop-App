@@ -27,7 +27,7 @@ class AppTextStyle {
 
   static TextStyle smallTitleText({Color? color, double? size}) {
     return TextStyle(
-      fontSize: size ?? 16,
+      fontSize: size ?? 14,
       color: color ?? AppColor.titleBlackText,
       fontWeight: FontWeight.bold,
     );
@@ -40,7 +40,7 @@ class AppTextStyle {
     );
   }
 
-  static TextStyle titleText() {
-    return const TextStyle(fontSize: 24, fontWeight: FontWeight.bold);
+  static TextStyle titleText({double? size}) {
+    return TextStyle(fontSize: size ?? 24, fontWeight: FontWeight.bold);
   }
 }
