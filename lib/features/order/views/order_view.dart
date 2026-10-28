@@ -5,12 +5,21 @@ import 'package:flutter/material.dart';
 import '../../../core/constants/image_constant.dart';
 import '../../../core/shard/custom_app_bar.dart';
 import '../../../core/theme/app_theme.dart';
+import '../widgets/order.dart';
 import '../widgets/order_type_selector.dart';
+import '../widgets/payment_summary.dart';
 
-class OrderView extends StatelessWidget {
+class OrderView extends StatefulWidget {
   final ProductsModel product;
 
   const OrderView({super.key, required this.product});
+
+  @override
+  State<OrderView> createState() => _OrderViewState();
+}
+
+class _OrderViewState extends State<OrderView> {
+  int _quantity = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +64,7 @@ class OrderView extends StatelessWidget {
 
                 const SizedBox(height: 10),
 
-                // Edit Address + Add Note
+                // Edit Address + Add Note section
                 Row(
                   children: [
                     _editInfo(text: 'Edit Address', icon: Icons.edit_note),
@@ -71,19 +80,67 @@ class OrderView extends StatelessWidget {
                 const SizedBox(height: 10),
 
                 // product
-                OrderItemCard(product: product),
+                OrderItemCard(
+                  product: widget.product,
+                  onQuantityChanged: (int newQuantity) {
+                    setState(() {
+                      _quantity = newQuantity;
+                    });
+                  },
+                ),
 
                 const SizedBox(height: 10),
 
-                const Divider(color: Color(0xffF9F2ED),),
+                const Divider(color: Color(0xffF9F2ED)),
 
                 const SizedBox(height: 10),
 
+                // discount section
+                Card(
+                  elevation: 0,
+                  color: Colors.white,
+                  margin: const EdgeInsets.symmetric(vertical: 6),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    side: const BorderSide(color: AppColor.cloud),
+                  ),
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.percent,
+                      color: AppColor.primaryColor,
+                    ),
+                    title: const Text("1 Discount is Applies"),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.arrow_forward_ios, size: 18),
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+
+                // payment summary
+                Text("Payment Summary", style: AppTextStyle.normalTitleText()),
+
+                const SizedBox(height: 15),
+
+                PaymentSummary(product: widget.product,),
+
+                const SizedBox(height: 20),
               ],
             ),
           ),
         ),
       ),
+
+        bottomNavigationBar: SafeArea(
+          child: Container(
+            height: 150,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+            color: Colors.white,
+            child: Order(product: widget.product, quantity: _quantity,),
+          ),
+        ),
     );
   }
 

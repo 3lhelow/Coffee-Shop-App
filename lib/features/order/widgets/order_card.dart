@@ -6,8 +6,13 @@ import 'quantity_counter.dart';
 
 class OrderItemCard extends StatefulWidget {
   final ProductsModel product;
+  final ValueChanged<int>? onQuantityChanged;
 
-  const OrderItemCard({super.key, required this.product});
+  const OrderItemCard({
+    super.key,
+    required this.product,
+    this.onQuantityChanged,
+  });
 
   @override
   State<OrderItemCard> createState() => _OrderItemCardState();
@@ -67,7 +72,13 @@ class _OrderItemCardState extends State<OrderItemCard> {
         // counter
         QuantityCounter(
           quantity: _quantity,
-          onChanged: (int value) => setState(() => _quantity = value),
+          onChanged: (int value) {
+            setState(() {
+              _quantity = value;
+            });
+
+            widget.onQuantityChanged?.call(value);
+          },
         ),
       ],
     );

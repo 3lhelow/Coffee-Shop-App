@@ -13,40 +13,38 @@ class _OrderTypeSelectorState extends State<OrderTypeSelector> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        height: 50,
+    return Container(
+      height: 50,
 
-        decoration: BoxDecoration(
-          color: const Color(0xffEDEDED),
-          borderRadius: BorderRadius.circular(12),
-        ),
+      decoration: BoxDecoration(
+        color: AppColor.cloud,
+        borderRadius: BorderRadius.circular(12),
+      ),
 
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
 
-          children: [
-            _textButton(
-              text: "Deliver",
-              isSelected: _isSelected,
-              onTap: () {
-                setState(() {
-                  _isSelected = true;
-                });
-              },
-            ),
+        children: [
+          _textButton(
+            text: "Deliver",
+            isSelected: _isSelected,
+            onTap: () {
+              setState(() {
+                _isSelected = true;
+              });
+            },
+          ),
 
-            _textButton(
-              text: "Pick Up",
-              isSelected: !_isSelected,
-              onTap: () {
-                setState(() {
-                  _isSelected = false;
-                });
-              },
-            ),
-          ],
-        ),
+          _textButton(
+            text: "Pick Up",
+            isSelected: !_isSelected,
+            onTap: () {
+              setState(() {
+                _isSelected = false;
+              });
+            },
+          ),
+        ],
       ),
     );
   }
@@ -61,7 +59,7 @@ class _OrderTypeSelectorState extends State<OrderTypeSelector> {
         height: 45,
 
         decoration: BoxDecoration(
-          color: isSelected ? AppColor.primaryColor : const Color(0xffEDEDED),
+          color: isSelected ? AppColor.primaryColor : AppColor.cloud,
           borderRadius: const BorderRadius.all(Radius.circular(12)),
         ),
 

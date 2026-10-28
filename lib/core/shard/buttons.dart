@@ -76,7 +76,7 @@ class CategoryButton extends StatelessWidget {
         height: 29,
 
         decoration: BoxDecoration(
-          color: isSelected ? AppColor.primaryColor : const Color(0xffEDEDED).withAlpha(300),
+          color: isSelected ? AppColor.primaryColor : AppColor.cloud.withAlpha(300),
           borderRadius: BorderRadius.circular(6),
         ),
 

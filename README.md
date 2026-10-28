@@ -1,5 +1,7 @@
 # Coffee Shop App
 
+![Coffee Shop App Thumbnail](assets/images/thumbnail.png)
+
 ## Design
 
 The following link is the Figma design link for this app:

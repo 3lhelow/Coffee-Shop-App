@@ -10,6 +10,7 @@ class AppColor {
   static const Color subTitleText = Color(0xffA2A2A2);
   static const Color iconBlack = Color(0xff2A2A2A);
   static const Color dividerColor = Color(0xffE3E3E3);
+  static const Color cloud = Color(0xFFEDEDED);
 }
 
 class AppTextStyle {
